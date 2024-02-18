@@ -1,0 +1,14 @@
+.sticky-banner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #76e2dd;
+  padding: 10px;
+  text-align: center;
+  z-index: 999;
+}
+
+body {
+  background-color: #efe5d1;
+}
+
