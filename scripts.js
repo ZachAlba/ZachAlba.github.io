@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
 import { getDatabase, set, get, update, remove, ref, child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
@@ -34,6 +33,40 @@ var enterID = document.querySelector("#enterID");
 var enterName = document.querySelector("#enterName");
 // Other code for writing data to the database ~ implement later
 
+function insertData() {
+  set(ref(db, enterID.value),{
+      Name: enterName.value,
+      ID: enterID.value
+  })
+  .then(()=>{
+      alert("Data added successfully");
+  })
+  .catch((error)=>{
+      alert(error);
+  });
+}
+
+function updateData(){
+  update(ref(db, enterID.value),{
+      Name: enterName.value,
+  })
+  .then(()=>{
+      alert("Data updated successfully");
+  })
+  .catch((error)=>{
+      alert(error);
+  });
+}
+
+function removeData(){
+  remove(ref(db, enterID.value))
+  .then(()=>{
+      alert("Data deleted successfully");
+  })
+  .catch((error)=>{
+      alert(error);
+  });
+}
 
 // Read data from the database
 var findID = document.querySelector("#findID");
@@ -42,7 +75,7 @@ var findPic = document.getElementById("findPic");
 
 function findData() {
   const dbRef = ref(db);
-  get(child(dbRef, "users/" +findID.value)).then((snapshot) => {
+  get(child(dbRef, findID.value)).then((snapshot) => {
     if (snapshot.exists()) {
       console.log(snapshot.val());
       findName.innerHTML = "Name: "+ snapshot.val().name;
@@ -58,7 +91,9 @@ function findData() {
 
 
 // Event listeners
+
 insertBtn.addEventListener('click', insertData);
 updateBtn.addEventListener('click', updateData);
 removeBtn.addEventListener('click', removeData);
+
 findBtn.addEventListener('click', findData);

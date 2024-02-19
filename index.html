@@ -22,7 +22,7 @@
         <br>
         <br>
         <div class = "appdata">
-            <div id="enterDetails" style="display: none;"></div>
+            <div id="enterDetails" class="enterDetails">
                 <h1>Enter Details</h1>
                 <h4>ID</h4>
                 <input id="enterID" type="text" placeholder="Enter ID">
@@ -35,7 +35,7 @@
                 <button id="delete">DELETE</button>
                 
             </div>
-            <div id="findDetails"></div>
+            <div id="findDetails" class="findDetails">
                 <h1>Find Details</h1>
                 <h4>ID</h4>
                 <input id="findID" type="text" placeholder="Enter ID">
@@ -43,11 +43,10 @@
                 <button id="find">FIND</button>
 
                 <h3 id="findName" type="text"></h3>
-                <h3 id="findPic"><img id="image" src="path/to/image.jpg" alt="Image"></h3>
-                
-                
+                <h3 id="findPic"><img id="image" src="" alt="Image"></h3>
+            </div>
         </div>
     </main>
-    <script src="scripts.js"></script>
+    <script type = "module" src="scripts.js"></script>
 </body>
 </html>

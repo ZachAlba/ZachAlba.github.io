@@ -31,6 +31,7 @@
 
 body {
   background-color: #3F729B;
+  text-align: center;
 }
 
 img {
@@ -55,4 +56,20 @@ img {
 
 input {
   width: 120px;
+}
+
+#enterDetails{
+  float: left;
+  width: 40%;
+  color: #333333;
+  border-radius: 20%;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+}
+
+#findDetails{
+  float: right;
+  width: 40%;
+  color: #333333;
+  border-radius: 20%;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
 }
