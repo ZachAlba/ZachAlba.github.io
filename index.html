@@ -22,7 +22,30 @@
         <br>
         <br>
         <div class = "appdata">
+            <div id="enterDetails" style="display: none;"></div>
+                <h1>Enter Details</h1>
+                <h4>ID</h4>
+                <input id="enterID" type="text" placeholder="Enter ID">
 
+                <h4>Name</h4>
+                <input id="enterName" type="text" placeholder="Enter Name">
+                <br><br>
+                <button id="insert">INSERT</button>
+                <button id="update">UPDATE</button>
+                <button id="delete">DELETE</button>
+                
+            </div>
+            <div id="findDetails"></div>
+                <h1>Find Details</h1>
+                <h4>ID</h4>
+                <input id="findID" type="text" placeholder="Enter ID">
+                <br><br>
+                <button id="find">FIND</button>
+
+                <h3 id="findName" type="text"></h3>
+                <h3 id="findPic"><img id="image" src="path/to/image.jpg" alt="Image"></h3>
+                
+                
         </div>
     </main>
     <script src="scripts.js"></script>
