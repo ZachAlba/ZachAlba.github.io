@@ -1,14 +1,16 @@
 .sticky-banner {
-  background-color: #76e2dd;
-  height: auto; /* Change height to auto */
-  
-  position: fixed;
+  background-color: #F5F5F5;
+  height: auto;
+  position: sticky;
   left: 0;
   right: 0;
+  border: 4px solid #FFA500;
+  border-radius: 50px;
+  
 }
 
 body {
-  background-color: #efe5d1;
+  background-color: #3F729B;
 }
 
 img {
@@ -17,4 +19,14 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3F729B;
+  padding: 20px;
+  border-radius: 20%;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
 }
