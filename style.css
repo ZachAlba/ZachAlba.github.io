@@ -10,6 +10,25 @@
   
 }
 
+/*     Primary Color (Brand Color):
+        Hex: #3F729B (A cool blue that is often associated with trust and professionalism)
+
+    Secondary Color (Accent Color):
+        Hex: #FF6F61 (A vibrant coral color that adds energy and warmth)
+
+    Background Color:
+        Hex: #F5F5F5 (A light gray that provides a clean and neutral backdrop)
+
+    Text Color:
+        Hex: #333333 (A dark gray for legible text against the light background)
+
+    Call-to-Action Color:
+        Hex: #FFA500 (A bold orange for buttons and interactive elements)
+
+    Icon Color:
+        Hex: #8E8E8E (A medium gray for subtle and elegant icons)
+*/
+
 body {
   background-color: #3F729B;
 }

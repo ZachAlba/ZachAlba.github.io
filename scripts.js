@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import {getDatabase, set, get, update, remove, ref, child} from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -20,3 +21,44 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const db = getDatabase();
+
+// Buttons
+var insertBtn = document.querySelector("#insert");
+var updateBtn = document.querySelector("#update");
+var removeBtn = document.querySelector("#remove");
+var findBtn = document.querySelector("#find");
+
+
+var enterID = document.querySelector("#enterID");
+var enterName = document.querySelector("#enterName");
+// Other code for writing data to the database ~ implement later
+
+
+// Read data from the database
+var findID = document.querySelector("#findID");
+var findName = document.querySelector("#findName");
+var findPic = document.getElementById("findPic");
+
+function findData() {
+  const dbRef = ref(db);
+  get(child(dbRef, "users/" +findID.value)).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());
+      findName.innerHTML = "Name: "+ snapshot.val().name;
+      findPic.firstChild.src = snapshot.val().image;
+    } else {
+      console.log("No data available");
+    }
+    
+  }).catch((error) => {
+    console.error(error);
+  });
+}
+
+
+// Event listeners
+insertBtn.addEventListener('click', insertData);
+updateBtn.addEventListener('click', updateData);
+removeBtn.addEventListener('click', removeData);
+findBtn.addEventListener('click', findData);
