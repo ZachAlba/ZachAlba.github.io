@@ -25,7 +25,7 @@ const db = getDatabase();
 // Buttons
 var insertBtn = document.querySelector("#insert");
 var updateBtn = document.querySelector("#update");
-var removeBtn = document.querySelector("#remove");
+var removeBtn = document.querySelector("#delete");
 var findBtn = document.querySelector("#find");
 
 
@@ -35,7 +35,7 @@ var enterName = document.querySelector("#enterName");
 
 function insertData() {
   set(ref(db, enterID.value),{
-      Name: enterName.value,
+      name: enterName.value,
       ID: enterID.value
   })
   .then(()=>{
@@ -48,7 +48,7 @@ function insertData() {
 
 function updateData(){
   update(ref(db, enterID.value),{
-      Name: enterName.value,
+      name: enterName.value,
   })
   .then(()=>{
       alert("Data updated successfully");
